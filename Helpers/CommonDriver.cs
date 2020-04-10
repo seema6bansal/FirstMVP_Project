@@ -19,14 +19,14 @@ namespace MVPproject.Helpers
         [OneTimeSetUp]
         public void TestSetup()
         {
-            // Define driver
+            //Define driver
            driver = new ChromeDriver();
 
             //Login page object
             LoginPage loginobj = new LoginPage();
             loginobj.LoginSteps(driver);
 
-            // Home Page object
+            //Home Page object
             HomePage homeobj = new HomePage();
             homeobj.NavigateToTMPage(driver);
         }

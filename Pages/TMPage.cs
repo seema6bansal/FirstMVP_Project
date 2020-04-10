@@ -45,9 +45,11 @@ namespace MVPproject.Pages
             //Find save button and click on the save button
             driver.FindElement(By.Id("SaveButton")).Click();
 
+            Thread.Sleep(2000);
+
             Console.WriteLine("Record created sucessfully");
 
-            int rowcount = driver.FindElements(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr/td[1]")).Count;
+            int rowcount = driver.FindElements(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr")).Count;
             Console.WriteLine("Row count is :  " + rowcount);
 
             int colcount = driver.FindElements(By.XPath("//*[@id='tmsGrid']/div[2]/div/table/thead/tr/th")).Count;
@@ -57,9 +59,9 @@ namespace MVPproject.Pages
             Thread.Sleep(2000);
             driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
 
-            String totalrow = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/span[2]")).Text;
+            String totalrowmsg = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/span[2]")).Text;
                         
-            Console.WriteLine("Total rows are :" + totalrow);
+            Console.WriteLine("Total rows are :" + totalrowmsg);
 
 
             //Validate TM create
